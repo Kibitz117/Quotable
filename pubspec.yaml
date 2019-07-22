@@ -17,16 +17,17 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
-  firebase_core: ^0.4.0+5
+  firebase_core: ^0.4.0+6
   firebase_analytics: ^3.0.2
-  firebase_messaging: ^5.1.2
   cloud_firestore: ^0.12.5+1
-
+  
   firebase_auth: ^0.11.1+6
   google_sign_in: ^4.0.2
   rxdart: ^0.22.0
   css_colors: ^1.0.2
   flutter_auth_buttons: ^0.5.0
+  firebase_messaging: ^5.1.2
+  firebase_database: ^3.0.4
   flutter:
     sdk: flutter
     

@@ -1,12 +1,15 @@
 import 'package:css_colors/css_colors.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:quotes_app/pages/add_friend.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+//import 'package:firebase_messaging/firebase_messaging.dart';
 class Friends extends StatefulWidget{
   @override
   FriendsState createState()=>new FriendsState();
  }
+ 
  class FriendsState extends State<Friends>{
 //   List<Widget> _getFriends() {
 //   final List<String> friends_list = <String>["Gabs","Tim","Matt","Kendall","Jimmy","Keeley","Hudson"];
@@ -35,7 +38,7 @@ Widget _buildList(BuildContext context,DocumentSnapshot document)
         
       ],
     ),
-    onTap: (){('Send message');},
+    onTap: (){print('Send quote');},
   );
 }
  @override
@@ -43,7 +46,7 @@ Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         body: StreamBuilder(
-            stream: Firestore.instance.collection('friend_list').snapshots(),
+            stream: Firestore.instance.collection('friends_list').snapshots(),
             builder:(context,snapshot){
               if(!snapshot.hasData) return const Text("Loading...");
               return ListView.builder(
