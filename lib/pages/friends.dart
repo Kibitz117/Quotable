@@ -11,19 +11,6 @@ class Friends extends StatefulWidget{
  }
  
  class FriendsState extends State<Friends>{
-//   List<Widget> _getFriends() {
-//   final List<String> friends_list = <String>["Gabs","Tim","Matt","Kendall","Jimmy","Keeley","Hudson"];
-//   final List<Widget>tiles=<Widget>[];
-//   for (int i = 0; i < friends_list.length; i++) {
-//     tiles.add(new GridTile(
-//         child: new InkResponse(
-//       enableFeedback: true,
-//       child: new Text(friends_list[i],style: new TextStyle(fontFamily: 'Montserrat',fontSize: 40),),
-//      // onTap: () => ,
-//     )));
-// }
-// return tiles;
-//   }
 Widget _buildList(BuildContext context,DocumentSnapshot document)
 {
   return ListTile(
@@ -38,7 +25,7 @@ Widget _buildList(BuildContext context,DocumentSnapshot document)
         
       ],
     ),
-    onTap: (){print('Send quote');},
+    onTap: (){deleteFriend(document.reference);},
   );
 }
  @override
@@ -72,4 +59,9 @@ Widget build(BuildContext context) {
       ),
     );
   }
+  void deleteFriend(DocumentReference docy){
+  docy.delete().whenComplete((){
+    
+  }).catchError((e)=>print(e));
+}
   }

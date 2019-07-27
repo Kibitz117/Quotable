@@ -1,5 +1,6 @@
 import 'package:css_colors/css_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:quotes_app/pages/add_friend.dart';
 import 'package:quotes_app/pages/friends.dart';
 import '../templates/quotes_page.dart';
 import 'package:quotes_app/auth.dart';
@@ -34,6 +35,7 @@ class Categories extends StatelessWidget{
               ),
               ListTile(
                 title: Text('Add friend'),
+                 onTap: (){Navigator.push(context, MaterialPageRoute(builder:(context)=>AddFriend()));}
               )
             ],
           ),
